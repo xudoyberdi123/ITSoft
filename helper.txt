@@ -2,3 +2,6 @@
 
     create user itsoft_user with password 'itsoft_root';
     create database itsoft_db owner itsoft_user;
+
+# node
+    npx create-react-app frontend
