@@ -5,3 +5,7 @@
 
 # node
     npx create-react-app frontend
+
+# django-admin-lte3
+    py manage.py collectstatic
+
