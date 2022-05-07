@@ -32,6 +32,9 @@ class Services(models.Model):
     description = models.TextField()
     img = models.ImageField()
 
+    def __str__(self):
+        return self.title
+
 
 class ServicesUslugi(models.Model):
     service = models.ForeignKey(Services, on_delete=models.SET_NULL, null=True)

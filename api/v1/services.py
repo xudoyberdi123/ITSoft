@@ -15,7 +15,6 @@ def get_list(requests, type, slug=None):
         page = 1
     offset = (page - 1) * PER_PAGE
 
-
     if type == "project" and slug:
         sql = """
             select pro.* from sayt_project pro
@@ -96,4 +95,20 @@ def get_services(requests):
     return OrderedDict([
         ('items', result),
         ('meta', pagging)
+    ])
+
+
+def _format_servise(data):
+    if data['uslug']:
+        uslugi = [i['uslugi'] for i in data['uslug']]
+
+    else:
+        uslugi = None
+
+    return OrderedDict([
+        ('id', data['id']),
+        ('title', data['title']),
+        ('description', data['description']),
+        ('img', data['img']),
+        ('uslugi', uslugi)
     ])
