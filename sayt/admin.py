@@ -19,6 +19,7 @@ class ServiceAdmin(admin.ModelAdmin):
 admin.site.register(Category)
 admin.site.register(Project)
 admin.site.register(Services, ServiceAdmin)
+admin.site.register(Partner)
 
 
 
