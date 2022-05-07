@@ -79,7 +79,10 @@ def get_services(requests):
 
     with closing(connection.cursor()) as cursor:
         cursor.execute(sql, [PER_PAGE, offset])
-        result = dictfetchall(cursor)
+        data = dictfetchall(cursor)
+        result = []
+        if data:
+            result = [_format_service(i) for i in data]
 
     with closing(connection.cursor()) as cursor:
         cursor.execute(f"select count(1) as cnt from sayt_services ")
@@ -98,7 +101,7 @@ def get_services(requests):
     ])
 
 
-def _format_servise(data):
+def _format_service(data):
     if data['uslug']:
         uslugi = [i['uslugi'] for i in data['uslug']]
 
