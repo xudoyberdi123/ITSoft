@@ -1,1 +1,1 @@
-web: gunicorn config.wsgi --log-file-
+web: gunicorn ITUnisoft.wsgi --log-file-
